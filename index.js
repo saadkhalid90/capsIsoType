@@ -32,7 +32,7 @@ function getIndCategs(array){
 }
 
 // draw function draws the default icons/ humanoids
-function draw(colorDef, boardComp){
+function draw(colorDef, boardComp, iconPathArr){
 
   const categoryRow = d3.select('.boardComp')
     .append('div')
@@ -62,7 +62,7 @@ function draw(colorDef, boardComp){
     .attr('preserveAspectRatio', 'xMinYMin meet')
 
   // draw icons in each svg
-  iconPathArray.forEach(d => {
+  iconPathArr.forEach(d => {
     icons.append('path')
                     .classed('iconPath', true)
                     .attr('d', d)
@@ -86,4 +86,4 @@ function updateIcons(arrCateg, colArray, colorDef){
     })
 }
 
-draw('grey', boardComp);
+draw('grey', boardComp, iconPathArray);
